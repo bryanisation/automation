@@ -46,7 +46,8 @@ class BasePage():
         by = self._getByType(locatorType)
         try:
             element = self.driver.find_element(by, locator)
-        pass
+        except Exception:
+            pass
 
     def _waitForElement(self, locator, to=10, pf=.5):
         try:
