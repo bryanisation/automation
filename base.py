@@ -21,9 +21,10 @@ class BasePage():
     def __init__(self) -> None:
         self.driver = webdriver.Chrome(service=Service(
                                        ChromeDriverManager().install()))
+        self._visit()
 
-    def _visit(self, arg):
-        pass
+    def _visit(self):
+        self.driver.get('https://odibets.com/league')
 
     def _getByType(self, locatorType):
         locatorType = locatorType.lower()
@@ -75,3 +76,10 @@ class BasePage():
 
     def _webscroll(self, locator):
         pass
+
+
+browser = BasePage()
+
+browser()
+
+    
